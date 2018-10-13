@@ -19,7 +19,7 @@ before_script:
 script: 
   - fastlane coverage
 #  - find . -type d | grep -E  ".xccovarchive$" | xargs -I@ bash utils/xccov-to-sonarqube-generic.sh @ > sonarqube-generic-coverage.xml
-  - sonar-scanner -X
+#  - sonar-scanner -X
 
 branches:
   only:

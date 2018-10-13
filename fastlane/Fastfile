@@ -1,0 +1,58 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Test"
+  lane :test do
+    scan(
+      derived_data_path: "Build"
+    )
+  end
+
+  desc "Local test with coverage"
+  lane :local_cov do
+    test
+
+    slather(
+      proj: "Shallux.xcodeproj",
+      scheme: "Shallux",
+      build_directory: "Build"
+    )
+
+    xcov(
+      output_directory: "xcov_output",
+      derived_data_path: "Build"
+    )
+  end
+
+  desc "CI test with coverage"
+  lane :coverage do
+    test
+
+    slather(
+      proj: "Shallux.xcodeproj",
+      scheme: "Shallux",
+      build_directory: "Build",
+      travis: true,
+      coveralls: true
+    )
+
+    xcov(
+      output_directory: "xcov_output",
+      derived_data_path: "Build"
+    )
+  end
+end

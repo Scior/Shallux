@@ -6,7 +6,7 @@
 
 # scheme("Example")
 
-devices(["iPhone 8 Plus", "iPhone XS"])
+devices(["iPhone 8 Plus"])
 clean(true)
 
 code_coverage(true)

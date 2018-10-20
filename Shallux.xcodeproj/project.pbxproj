@@ -88,6 +88,54 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6B206A9B217B12A10061350F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6B206A9C217B12AC0061350F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6B206A9F217B13080061350F /* View */,
+				6B206A9E217B12EE0061350F /* Storyboard+xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		6B206A9D217B12C10061350F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6B206A9E217B12EE0061350F /* Storyboard+xib */ = {
+			isa = PBXGroup;
+			children = (
+				6BC76837216B98E20069E99D /* Main.storyboard */,
+				6BC7683C216B98E60069E99D /* LaunchScreen.storyboard */,
+			);
+			path = "Storyboard+xib";
+			sourceTree = "<group>";
+		};
+		6B206A9F217B13080061350F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BC76835216B98E20069E99D /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B206AA0217B13400061350F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6BC7683A216B98E60069E99D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		6BC76827216B98E20069E99D = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +159,11 @@
 		6BC76832216B98E20069E99D /* Shallux */ = {
 			isa = PBXGroup;
 			children = (
+				6B206AA0217B13400061350F /* Resources */,
+				6B206A9D217B12C10061350F /* Data */,
+				6B206A9C217B12AC0061350F /* Presentation */,
+				6B206A9B217B12A10061350F /* Domain */,
 				6BC76833216B98E20069E99D /* AppDelegate.swift */,
-				6BC76835216B98E20069E99D /* ViewController.swift */,
-				6BC76837216B98E20069E99D /* Main.storyboard */,
-				6BC7683A216B98E60069E99D /* Assets.xcassets */,
-				6BC7683C216B98E60069E99D /* LaunchScreen.storyboard */,
 				6B206A9A217B0EAE0061350F /* Supporting Files */,
 			);
 			path = Shallux;

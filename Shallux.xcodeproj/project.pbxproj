@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B206A97217B0D9A0061350F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206A96217B0D9A0061350F /* main.swift */; };
+		6B206A99217B0DD60061350F /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206A98217B0DD60061350F /* TestAppDelegate.swift */; };
 		6BC76834216B98E20069E99D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76833216B98E20069E99D /* AppDelegate.swift */; };
 		6BC76836216B98E20069E99D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76835216B98E20069E99D /* ViewController.swift */; };
 		6BC76839216B98E20069E99D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC76837216B98E20069E99D /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B206A96217B0D9A0061350F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		6B206A98217B0DD60061350F /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		6BC76830216B98E20069E99D /* Shallux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shallux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC76833216B98E20069E99D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BC76835216B98E20069E99D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B206A9A217B0EAE0061350F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B206A96217B0D9A0061350F /* main.swift */,
+				6B206A98217B0DD60061350F /* TestAppDelegate.swift */,
+				6BC7683F216B98E60069E99D /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		6BC76827216B98E20069E99D = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +116,7 @@
 				6BC76837216B98E20069E99D /* Main.storyboard */,
 				6BC7683A216B98E60069E99D /* Assets.xcassets */,
 				6BC7683C216B98E60069E99D /* LaunchScreen.storyboard */,
-				6BC7683F216B98E60069E99D /* Info.plist */,
+				6B206A9A217B0EAE0061350F /* Supporting Files */,
 			);
 			path = Shallux;
 			sourceTree = "<group>";
@@ -277,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B206A99217B0DD60061350F /* TestAppDelegate.swift in Sources */,
 				6BC76836216B98E20069E99D /* ViewController.swift in Sources */,
 				6BC76834216B98E20069E99D /* AppDelegate.swift in Sources */,
+				6B206A97217B0D9A0061350F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE5VXS8N2M;
-				INFOPLIST_FILE = Shallux/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Shallux/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,7 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE5VXS8N2M;
-				INFOPLIST_FILE = Shallux/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Shallux/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,13 +9,16 @@
 import AVFoundation
 
 /**
- ExposureMeterViewController用のAVCaptutreSessionの生成クラス.
+ A class for generating `AVCaptutreSession` for `CameraPreviewView`.
 */
 final class ExposureMeterCaptureSessionBuilder {
     
     // MARK: Properties
     
+    /// An input for the capture session.
     static var videoDeviceInput: AVCaptureInput?
+    
+    /// A capture device for `CameraPreviewView`. `videoDeviceInput` will be refreshed when this value is changed.
     static var videoDevice = AVCaptureDevice.default(
         .builtInWideAngleCamera,
         for: .video,
@@ -27,16 +30,8 @@ final class ExposureMeterCaptureSessionBuilder {
         }
     }
     
-    // MARK: Methods
-    
-    private init() {}
-    
-    /**
-     ExposureMeter用のAVCaptutreSessionを生成する.
-     
-     - returns: AVCaptureSessionのインスタンス. 失敗した場合はnil
-    */
-    static func build() -> AVCaptureSession? {
+    /// Generates an `AVCaptureSession` instance when it is referenced.
+    static var captureSession: AVCaptureSession? {
         guard let videoDeviceInput = videoDeviceInput else { return nil }
         
         let captureSession = AVCaptureSession()
@@ -44,9 +39,14 @@ final class ExposureMeterCaptureSessionBuilder {
         
         guard captureSession.canAddInput(videoDeviceInput) else { return nil }
         captureSession.addInput(videoDeviceInput)
-        
         captureSession.commitConfiguration()
         
         return captureSession
     }
+    
+    // MARK: Methods
+    
+    /// Singleton
+    private init() {}
+    
 }

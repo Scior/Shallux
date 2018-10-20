@@ -9,18 +9,22 @@
 import UIKit
 import AVFoundation
 
+/**
+ An `UIViewController` for the main view.
+*/
 class ExposureMeterViewController: UIViewController {
     
-    @IBOutlet weak var cameraPreviewView: CameraPreviewView!
+    // MARK: Properties
     
-    lazy var captureSession: AVCaptureSession? = ExposureMeterCaptureSessionBuilder.build()
+    /// A view for showing input from the camera.
+    @IBOutlet weak private var cameraPreviewView: CameraPreviewView!
     
-    var previewLayer: AVCaptureVideoPreviewLayer?
+    // MARK: Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cameraPreviewView.videoPreviewLayer?.session = ExposureMeterCaptureSessionBuilder.build()
+        cameraPreviewView.videoPreviewLayer?.session = ExposureMeterCaptureSessionBuilder.captureSession
     }
 
 }

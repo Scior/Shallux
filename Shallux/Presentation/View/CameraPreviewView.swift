@@ -9,11 +9,16 @@
 import UIKit
 import AVFoundation
 
+/**
+ A `UIView` for showing input from a back camera.
+*/
 class CameraPreviewView: UIView {
+    /// Redefines the layer class as a `AVCaptureVideoPreviewLayer`.
     override class var layerClass: AnyClass {
         return AVCaptureVideoPreviewLayer.self
     }
     
+    /// Casts `layer` to `AVCaptureVideoPreviewLayer`.
     var videoPreviewLayer: AVCaptureVideoPreviewLayer? {
         return layer as? AVCaptureVideoPreviewLayer
     }

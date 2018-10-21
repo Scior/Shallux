@@ -11,6 +11,7 @@
 		6B206A99217B0DD60061350F /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206A98217B0DD60061350F /* TestAppDelegate.swift */; };
 		6B206AA6217B1B510061350F /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA5217B1B510061350F /* CameraPreviewView.swift */; };
 		6B206AA9217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift */; };
+		6B9E8722217C153F006FE9E4 /* ShalluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */; };
 		6BC76834216B98E20069E99D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76833216B98E20069E99D /* AppDelegate.swift */; };
 		6BC76836216B98E20069E99D /* ExposureMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76835216B98E20069E99D /* ExposureMeterViewController.swift */; };
 		6BC76839216B98E20069E99D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC76837216B98E20069E99D /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		6B206A98217B0DD60061350F /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		6B206AA5217B1B510061350F /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterCaptureSessionBuilder.swift; sourceTree = "<group>"; };
+		6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShalluxTests.swift; sourceTree = "<group>"; };
 		6BC76830216B98E20069E99D /* Shallux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shallux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC76833216B98E20069E99D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BC76835216B98E20069E99D /* ExposureMeterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		6BC76847216B98E60069E99D /* ShalluxTests */ = {
 			isa = PBXGroup;
 			children = (
+				6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */,
 				6B206AAE217B234A0061350F /* Utility */,
 				6B206AAA217B21470061350F /* Domain */,
 				6BC7684A216B98E70069E99D /* Info.plist */,
@@ -302,6 +305,7 @@
 					};
 					6BC76843216B98E60069E99D = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						TestTargetID = 6BC7682F216B98E20069E99D;
 					};
 					6BC7684E216B98E70069E99D = {
@@ -395,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B9E8722217C153F006FE9E4 /* ShalluxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +603,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE5VXS8N2M;
 				INFOPLIST_FILE = ShalluxTests/Info.plist;
@@ -608,6 +614,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.flyingalpaca.ShalluxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shallux.app/Shallux";
@@ -619,6 +626,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE5VXS8N2M;
 				INFOPLIST_FILE = ShalluxTests/Info.plist;

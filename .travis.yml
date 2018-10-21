@@ -11,13 +11,15 @@ addons:
   sonarcloud:
     organization: scior-github
     token:
-      secure: qUWqESb69O+3YbyLeoZjNTZh9eggUjiVYm5Mn/8GPRFfm3yIe7YQzUAr3bejyd5jOiJTGFitl+iBCEhz54Cet0F6+jJGdjBR3rjbrMaMqwdpuRJkT31dQNg7zwD8DSiE8d3xhrCMNYG/aIuAU0xqAp8BQU08ONZKO6U+bEG9RFl9pF92GFkRGHXYc7T0HeW9LH2LnRzHLQb/SqBd22Z+mi1BFtwIsEZGY0tDGfJ+XFrkBTdG4SnwZlt3zZOv9DBleOiqAV4jpVQKduOZI/kJgrQdNK2etrYvAf4Q4hFe4GVfcV09j/qQUs0EW/G2EfvnCUrVXpExDPHFcfuetuH7OWuzze869W0DQ8gPI0rkXGBr1cEWAJUke129YhWyzlrmesj81HgzWUppmJ7MfN2GNRp5SgN8vsfWvDPH8WnSF+CQd/vcUUSotjebVfQLlkv5oRGXO4Wub8tRPM+UinyoV1+BADCm1Oax+YMECJRep916EuySOVg0umxBcF7bD15g4AawWZd7oxWKPZ3UjlaVwbo1IPxuVWfWrSJgbo68+90vsuMlyRMm0qtbz5pdkMwTFtCqdnRknm2Tpt4+vav4b65TB6lgwFgY9hRVbrdqmDXc6yg1YiCbNLe8zyx+tx1Z75DKxdcc+LK9Anfa8buE/bDfvqI0c9dJ/lMJjOlvWgc=
+      secure: "QEtUVTnAX4RlaNHV5Jpc0cIwQB2X4InKUc4vZu3C7Cluz82M11IiQ7kDxk/h4H5HfoNTxq8C7U7RKZYn2OEXVnzO0aNcp2bPiOliTCo0tOgCrPnlj/LXrPP0xN8lkE0AJlebZtwOExw5xuwVkfhjDxsHw9Xk+7gIK9V8N+7ZxpgAJp/mzV5q/92QcJlvq3VK7zfKjyqP4Xyf3hkyH0j0Z/Xg8f8w/7NUB14x6VIYjZaiTFSLlB3CVtsVHQil0QWdJdveytMQnxXT9GD1jEucNUScTjQqmAgqAS0aD0wM3aB7kyRPtsMX3Rv5ZOWN1LgC38Jvn9uNksrAc34GR3yuFuDFdH1ejpwJRaeGZNvSMjAuAzX7GrMH1+f8bq0paHEW4QAuYOrlTbC5d8D4gEFKM27yRzM2508aWXo9euW3ZwTi3QNN7T5bkg4SM2hdBkvRxTS5C/5FzaWz+urzrUgA0X8AYH84bXmR3EpklAG71cP5QCrNR7IWciMThqBXTfNV7D3ynMlw/uvLF7C6L1vYSgQcgp21KAYuNNU1Vu1tiBGazODOWkwaOYKhoKdeumUjhSmgqE55tP98hN9joDowubi6CQk0TLZnPDbvZI47Mt4q7QmR9/zMwKB9w/Qp6RzueJ+83xEEdixgkbDN7AyeO0w3Z+wVdL//pE1bCYuZ66U="
 
 before_script:
   - bundle exec danger
 
 script:
   - fastlane coverage
+  - find . -type d | grep -E  ".xccovarchive$" | xargs -I@ bash utils/xccov-to-sonarqube-generic.sh @ > sonarqube-generic-coverage.xml
+  - sonar-scanner -X
 
 branches:
   only:

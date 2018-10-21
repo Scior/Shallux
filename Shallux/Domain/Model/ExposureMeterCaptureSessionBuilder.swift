@@ -34,19 +34,20 @@ final class ExposureMeterCaptureSessionBuilder {
     static var captureSession: AVCaptureSession? {
         guard let videoDeviceInput = videoDeviceInput else { return nil }
         
-        let captureSession = AVCaptureSession()
-        captureSession.beginConfiguration()
+        let session = AVCaptureSession()
+        session.beginConfiguration()
         
-        guard captureSession.canAddInput(videoDeviceInput) else { return nil }
-        captureSession.addInput(videoDeviceInput)
-        captureSession.commitConfiguration()
+        guard session.canAddInput(videoDeviceInput) else { return nil }
+        session.addInput(videoDeviceInput)
+        session.commitConfiguration()
         
-        return captureSession
+        return session
     }
     
     // MARK: Methods
     
-    /// Singleton
-    private init() {}
+    private init() {
+        // Singleton
+    }
     
 }

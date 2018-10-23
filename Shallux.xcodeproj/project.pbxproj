@@ -13,6 +13,7 @@
 		6B206AA9217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift */; };
 		6B5B46AE217F6A82003797E1 /* AVCaptureDeviceAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46AD217F6A82003797E1 /* AVCaptureDeviceAuthorizer.swift */; };
 		6B5B46B1217F6C67003797E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46B0217F6C67003797E1 /* Result.swift */; };
+		6B5B46B4217F73D3003797E1 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46B3217F73D3003797E1 /* ResultTests.swift */; };
 		6B9E8722217C153F006FE9E4 /* ShalluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */; };
 		6B9E8724217C1A59006FE9E4 /* ExposureMeterCaptureSessionBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E8723217C1A59006FE9E4 /* ExposureMeterCaptureSessionBuilderTests.swift */; };
 		6BC76834216B98E20069E99D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76833216B98E20069E99D /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterCaptureSessionBuilder.swift; sourceTree = "<group>"; };
 		6B5B46AD217F6A82003797E1 /* AVCaptureDeviceAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceAuthorizer.swift; sourceTree = "<group>"; };
 		6B5B46B0217F6C67003797E1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		6B5B46B3217F73D3003797E1 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShalluxTests.swift; sourceTree = "<group>"; };
 		6B9E8723217C1A59006FE9E4 /* ExposureMeterCaptureSessionBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterCaptureSessionBuilderTests.swift; sourceTree = "<group>"; };
 		6BC76830216B98E20069E99D /* Shallux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shallux.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 		6B206AAA217B21470061350F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				6B5B46B2217F73BA003797E1 /* Enums */,
 				6B206AAB217B21500061350F /* Model */,
 			);
 			path = Domain;
@@ -193,6 +196,14 @@
 			isa = PBXGroup;
 			children = (
 				6B5B46B0217F6C67003797E1 /* Result.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		6B5B46B2217F73BA003797E1 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				6B5B46B3217F73D3003797E1 /* ResultTests.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -418,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5B46B4217F73D3003797E1 /* ResultTests.swift in Sources */,
 				6B9E8724217C1A59006FE9E4 /* ExposureMeterCaptureSessionBuilderTests.swift in Sources */,
 				6B9E8722217C153F006FE9E4 /* ShalluxTests.swift in Sources */,
 			);

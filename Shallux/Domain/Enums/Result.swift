@@ -10,8 +10,10 @@
  A class represents the direct sum of the result `T` and the error `E`.
 */
 enum Result<T, E> {
-    case Ok(T)
-    case Error(E)
+    /// OK status which has the result value.
+    case ok(T)
+    /// Error status which has the value describing the occured error.
+    case error(E)
     
     /**
      Returns whether the result is OK.
@@ -22,9 +24,9 @@ enum Result<T, E> {
     */
     func isOk() -> Bool {
         switch self {
-        case .Ok:
+        case .ok:
             return true
-        case .Error:
+        case .error:
             return false
         }
     }
@@ -48,9 +50,9 @@ enum Result<T, E> {
     */
     func ok() -> T? {
         switch self {
-        case .Ok(let result):
+        case .ok(let result):
             return result
-        case .Error:
+        case .error:
             return nil
         }
     }
@@ -63,9 +65,9 @@ enum Result<T, E> {
      */
     func error() -> E? {
         switch self {
-        case .Ok:
+        case .ok:
             return nil
-        case .Error(let error):
+        case .error(let error):
             return error
         }
     }

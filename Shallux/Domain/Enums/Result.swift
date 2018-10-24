@@ -10,6 +10,7 @@
  A class represents the direct sum of the result `T` and the error `E`.
 */
 enum Result<T, E> {
+    
     /// OK status which has the result value.
     case ok(T)
     /// Error status which has the value describing the occured error.
@@ -46,7 +47,7 @@ enum Result<T, E> {
      Returns the result which is wrapped by `Optional`.
      
      - returns:
-       Returns the result which has type `T` if it is `.Ok`. Otherwise, returns `nil`.
+       Returns the result which has type `T` if itself is `.ok`. Otherwise, returns `nil`.
     */
     func ok() -> T? {
         switch self {
@@ -61,7 +62,7 @@ enum Result<T, E> {
      Returns the error which is wrapped by `Optional`.
      
      - returns:
-     Returns the error which has type `E` if it is `.Error`. Otherwise, returns `nil`.
+     Returns the error which has type `E` if itself is `.error`. Otherwise, returns `nil`.
      */
     func error() -> E? {
         switch self {
@@ -71,4 +72,36 @@ enum Result<T, E> {
             return error
         }
     }
+    
+    /**
+     Consumes the result value if itself is `.Ok`.
+     
+     - Parameters:
+       - handler: A handler to consume a `T` value.
+    */
+    func ifOk(_ handler: @escaping (T) -> Void) {
+        guard let result = ok() else { return }
+        
+        handler(result)
+    }
+    
+    /**
+     Applies the function to convert the result type from `T` to `U`.
+     
+     - Parameters:
+       - transform: A mapper function which maps `T` to `U`.
+     
+     - returns:
+     - `.ok` with type `Result<U, E>`, if its original state was `.ok`.
+     - `.error` with type `Result<U, E>`, if its original state was `.error`.
+     */
+    func map<U>(_ transform: ((T) -> U)) -> Result<U, E> {
+        switch self {
+        case .ok(let result):
+            return .ok(transform(result)) as Result<U, E>
+        case .error(let error):
+            return .error(error) as Result<U, E>
+        }
+    }
+    
 }

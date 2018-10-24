@@ -20,6 +20,7 @@ class ResultTests: XCTestCase {
     private var okResult: Res {
         return Res.ok(testResult)
     }
+    private let testMapper: (Int) -> String = { number in "\(number)" }
     
     func test_checkSwitchWhichHasResult() {
         switch okResult {
@@ -69,6 +70,30 @@ class ResultTests: XCTestCase {
     
     func test_errorReturnsNil() {
         XCTAssertNil(okResult.error())
+    }
+    
+    func test_mapWhenOk() {
+        XCTAssertEqual(okResult.map(testMapper).ok(), testMapper(testResult))
+    }
+    
+    func test_mapWhenError() {
+        XCTAssertNil(errorResult.map(testMapper).ok())
+    }
+    
+    func test_ifOkWhenOk() {
+        var isFailed = true
+        okResult.ifOk { _ in
+            isFailed = false
+        }
+        if isFailed {
+            XCTFail("Never pass")
+        }
+    }
+    
+    func test_ifOkWhenError() {
+        errorResult.ifOk { _ in
+            XCTFail("Never pass")
+        }
     }
 
 }

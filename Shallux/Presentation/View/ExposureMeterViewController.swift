@@ -24,7 +24,15 @@ class ExposureMeterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cameraPreviewView.videoPreviewLayer?.session = ExposureMeterCaptureSessionBuilder.captureSession
+        // TODO: Separate logics, handle error
+        if let errorStatus = AVCaptureDeviceAuthorizer.authorize().error() {
+            return
+        }
+        
+        // TODO: Separate logics, handle error
+        guard let session = ExposureMeterCaptureSessionBuilder.captureSession else { return }
+        session.startRunning()
+        cameraPreviewView.videoPreviewLayer?.session = session
     }
 
 }

@@ -19,11 +19,7 @@ final class ExposureMeterCaptureSessionBuilder {
     static var videoDeviceInput: AVCaptureInput?
     
     /// A capture device for `CameraPreviewView`. `videoDeviceInput` will be refreshed when this value is changed.
-    static var videoDevice = AVCaptureDevice.default(
-        .builtInWideAngleCamera,
-        for: .video,
-        position: .unspecified
-    ) {
+    static var videoDevice: AVCaptureDevice? {
         didSet {
             guard let videoDevice = videoDevice else { return }
             videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice)
@@ -32,6 +28,12 @@ final class ExposureMeterCaptureSessionBuilder {
     
     /// Generates an `AVCaptureSession` instance when it is referenced.
     static var captureSession: AVCaptureSession? {
+        videoDevice = AVCaptureDevice.default(
+            .builtInWideAngleCamera,
+            for: .video,
+            position: .unspecified
+        )
+        
         guard let videoDeviceInput = videoDeviceInput else { return nil }
         
         let session = AVCaptureSession()

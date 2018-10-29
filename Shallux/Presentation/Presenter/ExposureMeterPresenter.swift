@@ -6,12 +6,22 @@
 //  Copyright © 2018 Suita Fujino. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 
 /**
  A presenter for `ExposureMeterViewController`.
 */
 final class ExposureMeterPresenter: Presenter {
+    
+    // MARK: - Constants
+    
+    private let errorMessages: [AVAuthorizationStatus: String] = [
+        .denied: "Access denied.",
+        .restricted: "Not permitted to access the camera device.",
+        .notDetermined: "Access permission is needed.",
+        .authorized: "Couldn't access the camera device."
+    ]
     
     // MARK: - Properties
     
@@ -34,11 +44,15 @@ final class ExposureMeterPresenter: Presenter {
     
     // MARK: - Methods
     
+    /**
+     Requires authorization for the capture device via `AVCaptureDeviceAuthorizer`.
+    */
     func authorize() {
         if let errorStatus = captureDeviceAuthorizer.authorize().error() {
+            guard let message = errorMessages[errorStatus] else { return }
             let alertController = UIAlertController(
                 title: NSLocalizedString("Unable to access the camera", comment: ""),
-                message: "\(errorStatus)",
+                message: NSLocalizedString(message, comment: ""),
                 buttonTitle: "OK")
             viewController.present(alertController, animated: true)
         }

@@ -26,14 +26,14 @@ final class AVCaptureDeviceAuthorizer {
         let authorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
-            guard let captureSession = ExposureMeterCaptureSessionBuilder.captureSession else { break }
+            guard let captureSession = ExposureMeterCaptureSessionBuilder.createSession() else { break }
             return Result.ok(captureSession)
         case .notDetermined:
             let semaphore = DispatchSemaphore(value: 0)
             var result: AuthorizationResult?
             
             AVCaptureDevice.requestAccess(for: .video) { granted in
-                if granted, let captureSession = ExposureMeterCaptureSessionBuilder.captureSession {
+                if granted, let captureSession = ExposureMeterCaptureSessionBuilder.createSession() {
                     result = Result.ok(captureSession)
                 }
                 semaphore.signal()

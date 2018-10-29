@@ -34,7 +34,7 @@ class ExposureMeterViewController: UIViewController {
         
         presenter.authorize()
         
-        guard let session = ExposureMeterCaptureSessionBuilder.createSession() else { return }
+        guard let session = ExposureMeterCaptureSessionBuilder.captureSession else { return }
         session.startRunning()
         cameraPreviewView.videoPreviewLayer?.session = session
     }

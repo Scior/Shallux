@@ -15,10 +15,10 @@ final class ExposureMeterCaptureSessionBuilder {
     
     // MARK: Properties
     
-    /// An input for the capture session.
+    /// The device input for the capture session.
     static var videoDeviceInput: AVCaptureInput?
     
-    /// A capture device for `CameraPreviewView`. `videoDeviceInput` will be refreshed when this value is changed.
+    /// The capture device for `CameraPreviewView`. `videoDeviceInput` will be refreshed when this value is changed.
     static var videoDevice: AVCaptureDevice? {
         didSet {
             guard let videoDevice = videoDevice else { return }
@@ -26,8 +26,21 @@ final class ExposureMeterCaptureSessionBuilder {
         }
     }
     
-    /// Generates an `AVCaptureSession` instance when it is referenced.
-    static var captureSession: AVCaptureSession? {
+    /// The object responsible to the camera device I/O.
+    static var captureSession: AVCaptureSession?
+    
+    // MARK: Methods
+    
+    private init() {
+        // Singleton
+    }
+    
+    /**
+     Creates an `AVCaptureSession` instance when it is referenced.
+     
+     - Returns: Created session or `nil`.
+    */
+    static func createSession() -> AVCaptureSession? {
         videoDevice = AVCaptureDevice.default(
             .builtInWideAngleCamera,
             for: .video,
@@ -43,13 +56,8 @@ final class ExposureMeterCaptureSessionBuilder {
         session.addInput(videoDeviceInput)
         session.commitConfiguration()
         
+        captureSession = session
         return session
-    }
-    
-    // MARK: Methods
-    
-    private init() {
-        // Singleton
     }
     
 }

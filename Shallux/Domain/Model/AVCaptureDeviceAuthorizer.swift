@@ -8,6 +8,9 @@
 
 import AVKit
 
+/**
+ An authorizer to permit accessing capture devices.
+*/
 final class AVCaptureDeviceAuthorizer {
     
     typealias AuthorizationResult = Result<AVCaptureSession, AVAuthorizationStatus>
@@ -19,7 +22,7 @@ final class AVCaptureDeviceAuthorizer {
        - If the authorization succeeded, it contains `AVCaptureSession`.
        - Otherwise, it contains `AVAuthorizationStatus`.
     */
-    static func authorize() -> AuthorizationResult {
+    func authorize() -> AuthorizationResult {
         let authorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:

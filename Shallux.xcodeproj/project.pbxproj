@@ -11,6 +11,7 @@
 		6B206A99217B0DD60061350F /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206A98217B0DD60061350F /* TestAppDelegate.swift */; };
 		6B206AA6217B1B510061350F /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA5217B1B510061350F /* CameraPreviewView.swift */; };
 		6B206AA9217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift */; };
+		6B374338219846D3001493A1 /* PresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B374337219846D3001493A1 /* PresentableViewController.swift */; };
 		6B5B46B1217F6C67003797E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46B0217F6C67003797E1 /* Result.swift */; };
 		6B5B46B4217F73D3003797E1 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46B3217F73D3003797E1 /* ResultTests.swift */; };
 		6B9E8722217C153F006FE9E4 /* ShalluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */; };
@@ -49,6 +50,7 @@
 		6B206A98217B0DD60061350F /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		6B206AA5217B1B510061350F /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterCaptureSessionConnector.swift; sourceTree = "<group>"; };
+		6B374337219846D3001493A1 /* PresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableViewController.swift; sourceTree = "<group>"; };
 		6B5B46B0217F6C67003797E1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		6B5B46B3217F73D3003797E1 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShalluxTests.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				6BEFE9AD218741B70069C12F /* Extensions */,
 				6BC76835216B98E20069E99D /* ExposureMeterViewController.swift */,
 				6B206AA5217B1B510061350F /* CameraPreviewView.swift */,
+				6B374337219846D3001493A1 /* PresentableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				6BEFE9A7218737520069C12F /* AlertController+SingleAction.swift in Sources */,
 				6B206AA6217B1B510061350F /* CameraPreviewView.swift in Sources */,
 				6B206A97217B0D9A0061350F /* main.swift in Sources */,
+				6B374338219846D3001493A1 /* PresentableViewController.swift in Sources */,
 				6B5B46B1217F6C67003797E1 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

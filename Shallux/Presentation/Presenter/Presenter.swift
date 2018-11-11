@@ -13,5 +13,7 @@ import UIKit
  */
 protocol Presenter {
     /// A `UIViewController` to present.
-    var viewController: UIViewController { get }
+    var viewController: UIViewController { get set }
+    
+    init(_ viewController: UIViewController)
 }

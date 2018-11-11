@@ -12,20 +12,17 @@ import AVFoundation
 /**
  An `UIViewController` for the main view.
 */
-class ExposureMeterViewController: UIViewController {
+class ExposureMeterViewController: PresentableViewController<ExposureMeterPresenter> {
     
     // MARK: - Properties
     
     /// A view for showing the input from the camera.
     @IBOutlet weak private var cameraPreviewView: CameraPreviewView!
     
-    private var presenter: ExposureMeterPresenter?
-    
     // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = ExposureMeterPresenter(self)
     }
     
     override func viewDidAppear(_ animated: Bool) {

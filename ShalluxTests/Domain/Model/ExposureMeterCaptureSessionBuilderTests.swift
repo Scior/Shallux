@@ -1,5 +1,5 @@
 //
-//  ExposureMeterCaptureSessionBuilderTests.swift
+//  ExposureMeterCaptureSessionConnectorTests.swift
 //  ShalluxTests
 //
 //  Created by Suita Fujino on 2018/10/21.
@@ -10,14 +10,15 @@ import AVFoundation
 import XCTest
 @testable import Shallux
 
-class ExposureMeterCaptureSessionBuilderTests: XCTestCase {
+class ExposureMeterCaptureSessionConnectorTests: XCTestCase {
     
     // NOTE: Unit tests cannot be accomplished since there is no way to mock `AVCaptureDevice`.
 
     func testSetVideoDeviceNil() {
-        let beforeInput = ExposureMeterCaptureSessionBuilder.videoDeviceInput
-        ExposureMeterCaptureSessionBuilder.videoDevice = nil
-        let afterInput = ExposureMeterCaptureSessionBuilder.videoDeviceInput
+        let connector = ExposureMeterCaptureSessionConnector()
+        let beforeInput = connector.videoDeviceInput
+        XCTAssertNil(connector.connect())
+        let afterInput = connector.videoDeviceInput
         
         XCTAssertEqual(beforeInput, afterInput)
         

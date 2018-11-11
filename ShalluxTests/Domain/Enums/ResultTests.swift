@@ -15,10 +15,10 @@ class ResultTests: XCTestCase {
     private let testError = "hoge"
     private let testResult = 1_234
     private var errorResult: Res {
-        return Res.error(testError)
+        return .error(testError)
     }
     private var okResult: Res {
-        return Res.ok(testResult)
+        return .ok(testResult)
     }
     private let testMapper: (Int) -> String = { number in "\(number)" }
     

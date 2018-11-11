@@ -10,7 +10,7 @@
 		6B206A97217B0D9A0061350F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206A96217B0D9A0061350F /* main.swift */; };
 		6B206A99217B0DD60061350F /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206A98217B0DD60061350F /* TestAppDelegate.swift */; };
 		6B206AA6217B1B510061350F /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA5217B1B510061350F /* CameraPreviewView.swift */; };
-		6B206AA9217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift */; };
+		6B206AA9217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift */; };
 		6B5B46B1217F6C67003797E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46B0217F6C67003797E1 /* Result.swift */; };
 		6B5B46B4217F73D3003797E1 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46B3217F73D3003797E1 /* ResultTests.swift */; };
 		6B9E8722217C153F006FE9E4 /* ShalluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */; };
@@ -21,6 +21,10 @@
 		6BC7683B216B98E60069E99D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC7683A216B98E60069E99D /* Assets.xcassets */; };
 		6BC7683E216B98E60069E99D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC7683C216B98E60069E99D /* LaunchScreen.storyboard */; };
 		6BC76854216B98E70069E99D /* ShalluxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76853216B98E70069E99D /* ShalluxUITests.swift */; };
+		6BEFE9A32185F49B0069C12F /* AVCaptureDeviceAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEFE9A22185F49B0069C12F /* AVCaptureDeviceAuthorizer.swift */; };
+		6BEFE9A7218737520069C12F /* AlertController+SingleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEFE9A6218737520069C12F /* AlertController+SingleAction.swift */; };
+		6BEFE9AF218743270069C12F /* ExposureMeterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEFE9AE218743270069C12F /* ExposureMeterPresenter.swift */; };
+		6BEFE9B1218745AE0069C12F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEFE9B0218745AE0069C12F /* Presenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +48,7 @@
 		6B206A96217B0D9A0061350F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6B206A98217B0DD60061350F /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		6B206AA5217B1B510061350F /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
-		6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterCaptureSessionBuilder.swift; sourceTree = "<group>"; };
+		6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterCaptureSessionConnector.swift; sourceTree = "<group>"; };
 		6B5B46B0217F6C67003797E1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		6B5B46B3217F73D3003797E1 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShalluxTests.swift; sourceTree = "<group>"; };
@@ -61,6 +65,11 @@
 		6BC7684F216B98E70069E99D /* ShalluxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShalluxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC76853216B98E70069E99D /* ShalluxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShalluxUITests.swift; sourceTree = "<group>"; };
 		6BC76855216B98E70069E99D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BEFE9A22185F49B0069C12F /* AVCaptureDeviceAuthorizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceAuthorizer.swift; sourceTree = "<group>"; };
+		6BEFE9A6218737520069C12F /* AlertController+SingleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertController+SingleAction.swift"; sourceTree = "<group>"; };
+		6BEFE9AA218740C20069C12F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6BEFE9AE218743270069C12F /* ExposureMeterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterPresenter.swift; sourceTree = "<group>"; };
+		6BEFE9B0218745AE0069C12F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +145,7 @@
 		6B206A9F217B13080061350F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6BEFE9AD218741B70069C12F /* Extensions */,
 				6BC76835216B98E20069E99D /* ExposureMeterViewController.swift */,
 				6B206AA5217B1B510061350F /* CameraPreviewView.swift */,
 			);
@@ -153,7 +163,8 @@
 		6B206AA7217B1BD70061350F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift */,
+				6BEFE9A22185F49B0069C12F /* AVCaptureDeviceAuthorizer.swift */,
+				6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +196,8 @@
 		6B206AB1217B70590061350F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				6BEFE9AE218743270069C12F /* ExposureMeterPresenter.swift */,
+				6BEFE9B0218745AE0069C12F /* Presenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -208,6 +221,7 @@
 		6BC76827216B98E20069E99D = {
 			isa = PBXGroup;
 			children = (
+				6BEFE9AB218740C20069C12F /* Localizable.strings */,
 				6BC76832216B98E20069E99D /* Shallux */,
 				6BC76847216B98E60069E99D /* ShalluxTests */,
 				6BC76852216B98E70069E99D /* ShalluxUITests */,
@@ -256,6 +270,14 @@
 				6BC76855216B98E70069E99D /* Info.plist */,
 			);
 			path = ShalluxUITests;
+			sourceTree = "<group>";
+		};
+		6BEFE9AD218741B70069C12F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BEFE9A6218737520069C12F /* AlertController+SingleAction.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,10 +433,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B206AA9217B1C540061350F /* ExposureMeterCaptureSessionBuilder.swift in Sources */,
+				6B206AA9217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift in Sources */,
+				6BEFE9B1218745AE0069C12F /* Presenter.swift in Sources */,
 				6B206A99217B0DD60061350F /* TestAppDelegate.swift in Sources */,
+				6BEFE9A32185F49B0069C12F /* AVCaptureDeviceAuthorizer.swift in Sources */,
 				6BC76836216B98E20069E99D /* ExposureMeterViewController.swift in Sources */,
 				6BC76834216B98E20069E99D /* AppDelegate.swift in Sources */,
+				6BEFE9AF218743270069C12F /* ExposureMeterPresenter.swift in Sources */,
+				6BEFE9A7218737520069C12F /* AlertController+SingleAction.swift in Sources */,
 				6B206AA6217B1B510061350F /* CameraPreviewView.swift in Sources */,
 				6B206A97217B0D9A0061350F /* main.swift in Sources */,
 				6B5B46B1217F6C67003797E1 /* Result.swift in Sources */,
@@ -469,6 +495,14 @@
 				6BC7683D216B98E60069E99D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6BEFE9AB218740C20069C12F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BEFE9AA218740C20069C12F /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -597,6 +631,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE5VXS8N2M;
 				INFOPLIST_FILE = "$(SRCROOT)/Shallux/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -615,6 +650,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE5VXS8N2M;
 				INFOPLIST_FILE = "$(SRCROOT)/Shallux/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

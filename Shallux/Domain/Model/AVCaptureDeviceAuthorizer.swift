@@ -16,24 +16,24 @@ final class AVCaptureDeviceAuthorizer {
     typealias AuthorizationResult = Result<AVCaptureSession, AVAuthorizationStatus>
     
     /**
-     Requires authorization and returns the result.
+     Requires authorization and executes the task on success.
      
      - Returns: `Result<AVCaptureSession, AVAuthorizationStatus>`
        - If the authorization succeeded, it contains `AVCaptureSession`.
        - Otherwise, it contains `AVAuthorizationStatus`.
     */
-    func authorize() -> AuthorizationResult {
+    func authorize(onSuccess: @escaping () -> AVCaptureSession?) -> AuthorizationResult {
         let authorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
-            guard let captureSession = ExposureMeterCaptureSessionBuilder.createSession() else { break }
+            guard let captureSession = onSuccess() else { break }
             return Result.ok(captureSession)
         case .notDetermined:
             let semaphore = DispatchSemaphore(value: 0)
             var result: AuthorizationResult?
             
             AVCaptureDevice.requestAccess(for: .video) { granted in
-                if granted, let captureSession = ExposureMeterCaptureSessionBuilder.createSession() {
+                if granted, let captureSession = onSuccess() {
                     result = Result.ok(captureSession)
                 }
                 semaphore.signal()

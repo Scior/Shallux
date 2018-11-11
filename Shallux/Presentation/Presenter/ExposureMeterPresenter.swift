@@ -28,6 +28,8 @@ final class ExposureMeterPresenter: Presenter {
     var viewController: UIViewController
     /// The authorizer to use capture devices.
     let captureDeviceAuthorizer: AVCaptureDeviceAuthorizer
+    /// The capture session for `CameraPreviewView`.
+    let captureSessionConnector: ExposureMeterCaptureSessionConnector
     
     // MARK: - Lifecycle
     
@@ -39,7 +41,9 @@ final class ExposureMeterPresenter: Presenter {
     */
     init(_ viewController: UIViewController) {
         self.viewController = viewController
+        // NOTE: Not injectable since it's hard to mock them.
         self.captureDeviceAuthorizer = AVCaptureDeviceAuthorizer()
+        self.captureSessionConnector = ExposureMeterCaptureSessionConnector()
     }
     
     // MARK: - Methods
@@ -48,12 +52,15 @@ final class ExposureMeterPresenter: Presenter {
      Requires authorization for the capture device via `AVCaptureDeviceAuthorizer`.
     */
     func authorize() {
-        if let errorStatus = captureDeviceAuthorizer.authorize().error() {
+        if let errorStatus = captureDeviceAuthorizer.authorize(onSuccess: {
+            return self.captureSessionConnector.connect()
+        }).error() {
             guard let message = errorMessages[errorStatus] else { return }
             let alertController = UIAlertController(
                 title: NSLocalizedString("Unable to access the camera", comment: ""),
                 message: NSLocalizedString(message, comment: ""),
                 buttonTitle: "OK")
+            
             viewController.present(alertController, animated: true)
         }
     }

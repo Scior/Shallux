@@ -33,10 +33,10 @@ class ExposureMeterViewController: UIViewController {
         guard let presenter = presenter else { fatalError("Presenter is absent.") }
         
         presenter.authorize()
-        
-        guard let session = ExposureMeterCaptureSessionBuilder.captureSession else { return }
-        session.startRunning()
-        cameraPreviewView.videoPreviewLayer?.session = session
+        if let session = presenter.captureSessionConnector.captureSession {
+            session.startRunning()
+            cameraPreviewView.videoPreviewLayer?.session = session
+        }
     }
 
 }

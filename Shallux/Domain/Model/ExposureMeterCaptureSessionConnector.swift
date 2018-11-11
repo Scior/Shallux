@@ -1,5 +1,5 @@
 //
-//  ExposureMeterCaptureSessionBuilder.swift
+//  ExposureMeterCaptureSessionConnector.swift
 //  Shallux
 //
 //  Created by Suita Fujino on 2018/10/20.
@@ -11,15 +11,15 @@ import AVFoundation
 /**
  A class for generating `AVCaptutreSession` for `CameraPreviewView`.
 */
-final class ExposureMeterCaptureSessionBuilder {
+final class ExposureMeterCaptureSessionConnector {
     
     // MARK: Properties
     
     /// The device input for the capture session.
-    static var videoDeviceInput: AVCaptureInput?
+    private(set) var videoDeviceInput: AVCaptureInput?
     
     /// The capture device for `CameraPreviewView`. `videoDeviceInput` will be refreshed when this value is changed.
-    static var videoDevice: AVCaptureDevice? {
+    private(set) var videoDevice: AVCaptureDevice? {
         didSet {
             guard let videoDevice = videoDevice else { return }
             videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice)
@@ -27,20 +27,16 @@ final class ExposureMeterCaptureSessionBuilder {
     }
     
     /// The object responsible to the camera device I/O.
-    static var captureSession: AVCaptureSession?
+    private(set) var captureSession: AVCaptureSession?
     
     // MARK: Methods
-    
-    private init() {
-        // Singleton
-    }
     
     /**
      Creates an `AVCaptureSession` instance when it is referenced.
      
      - Returns: Created session or `nil`.
     */
-    static func createSession() -> AVCaptureSession? {
+    func connect() -> AVCaptureSession? {
         videoDevice = AVCaptureDevice.default(
             .builtInWideAngleCamera,
             for: .video,

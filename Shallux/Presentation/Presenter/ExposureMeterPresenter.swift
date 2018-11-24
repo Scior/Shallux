@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import Linna
 import UIKit
 
 /**
@@ -56,10 +57,15 @@ final class ExposureMeterPresenter: Presenter {
             return self.captureSessionConnector.connect()
         }).error() {
             guard let message = errorMessages[errorStatus] else { return }
+            
+            let localizedMessage = NSLocalizedString(message, comment: "")
             let alertController = UIAlertController(
                 title: NSLocalizedString("Unable to access the camera", comment: ""),
-                message: NSLocalizedString(message, comment: ""),
-                buttonTitle: "OK")
+                message: localizedMessage,
+                buttonTitle: "OK"
+            )
+            
+            Linna.cout(localizedMessage)
             
             viewController.present(alertController, animated: true)
         }

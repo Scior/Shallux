@@ -13,6 +13,7 @@
 		6B206AA9217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift */; };
 		6B5B46B1217F6C67003797E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46B0217F6C67003797E1 /* Result.swift */; };
 		6B5B46B4217F73D3003797E1 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B46B3217F73D3003797E1 /* ResultTests.swift */; };
+		6B865D1021A9211000C43AAF /* Linna.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6B865D0E21A9211000C43AAF /* Linna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6B9E8722217C153F006FE9E4 /* ShalluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */; };
 		6B9E8724217C1A59006FE9E4 /* ExposureMeterCaptureSessionBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E8723217C1A59006FE9E4 /* ExposureMeterCaptureSessionBuilderTests.swift */; };
 		6BC76834216B98E20069E99D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76833216B98E20069E99D /* AppDelegate.swift */; };
@@ -44,6 +45,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6B865D1121A9211000C43AAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6B865D1021A9211000C43AAF /* Linna.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6B206A96217B0D9A0061350F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6B206A98217B0DD60061350F /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +66,7 @@
 		6B206AA8217B1C540061350F /* ExposureMeterCaptureSessionConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterCaptureSessionConnector.swift; sourceTree = "<group>"; };
 		6B5B46B0217F6C67003797E1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		6B5B46B3217F73D3003797E1 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
+		6B865D0E21A9211000C43AAF /* Linna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Linna.framework; path = Carthage/Build/iOS/Linna.framework; sourceTree = "<group>"; };
 		6B9E8721217C153F006FE9E4 /* ShalluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShalluxTests.swift; sourceTree = "<group>"; };
 		6B9E8723217C1A59006FE9E4 /* ExposureMeterCaptureSessionBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureMeterCaptureSessionBuilderTests.swift; sourceTree = "<group>"; };
 		6BC76830216B98E20069E99D /* Shallux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shallux.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +237,7 @@
 		6BC76827216B98E20069E99D = {
 			isa = PBXGroup;
 			children = (
+				6B865D0E21A9211000C43AAF /* Linna.framework */,
 				6BEFE9AB218740C20069C12F /* Localizable.strings */,
 				6BC76832216B98E20069E99D /* Shallux */,
 				6BC76847216B98E60069E99D /* ShalluxTests */,
@@ -291,6 +308,7 @@
 				6BC7682D216B98E20069E99D /* Frameworks */,
 				6BC7682E216B98E20069E99D /* Resources */,
 				6BA2DA232171D7D5000B148E /* ShellScript */,
+				6B865D1121A9211000C43AAF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -630,6 +648,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE5VXS8N2M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Shallux/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -649,6 +671,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE5VXS8N2M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Shallux/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
